@@ -1,0 +1,10 @@
+.filterSelector {
+    
+}
+
+.filtername {
+    display: inline;
+}
+.filtername::before {
+    content: "Categories: ";
+}

@@ -1,0 +1,28 @@
+.booksCardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bookCard {
+    background-color: whitesmoke;
+    padding: 20px;
+    width: 250px;
+    height: 400px;
+    margin: 20px 10px;
+    overflow-y: hidden;
+
+}
+
+.imgBooks {
+    display: block;
+    margin: 0 auto;
+}
+
+.descBooks {
+    padding: 20px 0px 0px 0px;
+    
+}
+.descBooks > h3 { 
+    margin: 0;
+}

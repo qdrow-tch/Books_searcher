@@ -3,8 +3,8 @@ import React from "react";
 function ShortBookCard() {
     return (
         <div className="ShortBookCard">
-            
 
+            
         </div>
     );
 }

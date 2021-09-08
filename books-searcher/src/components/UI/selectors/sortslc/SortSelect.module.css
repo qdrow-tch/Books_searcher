@@ -1,0 +1,10 @@
+.sortSelector {
+    
+}
+
+.sortername {
+    display: inline;
+}
+.sortername::before {
+    content: "Sorting by: ";
+}

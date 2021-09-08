@@ -1,12 +1,21 @@
 import React from "react";
+import BookCard from "./BookCard";
+import classes from './styles/Style.module.css'
 
-function BookCardList() {
+function BooksCardList (props){
+    console.log(props)
     return (
-        <div className="BookCardList"> 
-
-            
+        <div className={classes.booksCardList}>
+            {props.bookslist.map(book=>
+                <BookCard 
+                    imglink={book.imageLinks.smallThumbnail} 
+                    categories={book.categories[0]} 
+                    title={book.title}
+                    autors={book.authors}/>
+                )}
+             
         </div>
     );
 }
 
-export default BookCardList;
+export default BooksCardList;
