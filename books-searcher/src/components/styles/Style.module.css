@@ -1,28 +1,12 @@
-.booksCardList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.header {
+    background: url(../img/manuscript-header.jpg) no-repeat center;
+    background-size: cover;
+    height: 300px;
+    color: white;
+    text-align: center;
 }
 
-.bookCard {
-    background-color: whitesmoke;
-    padding: 20px;
-    width: 250px;
-    height: 400px;
-    margin: 20px 10px;
-    overflow-y: hidden;
-
-}
-
-.imgBooks {
-    display: block;
+.searchpanel  {
+    max-width: 800px;
     margin: 0 auto;
-}
-
-.descBooks {
-    padding: 20px 0px 0px 0px;
-    
-}
-.descBooks > h3 { 
-    margin: 0;
 }
