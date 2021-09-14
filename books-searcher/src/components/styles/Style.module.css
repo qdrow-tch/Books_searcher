@@ -10,3 +10,27 @@
     max-width: 800px;
     margin: 0 auto;
 }
+
+.searchpanel > h3 {
+    margin: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 3em;
+}
+
+.booksCardList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bookCard {
+    width: 240px;
+    height: 400px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+}

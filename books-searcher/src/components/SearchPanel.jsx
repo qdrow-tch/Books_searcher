@@ -19,27 +19,30 @@ function SearchPanel(props) {
                 <h3>Search for books</h3>
                 <SearchInput {...propsSearchPanel} />
                 <br/>
-                <FilterSelect
-                    value={props.categories}
-                    onChange={filter => props.setCategories(filter)}
-                    defaultValue="All"
-                    options={[
-                        {value: '+subject:art', name: 'Art'},
-                        {value: '+subject:biography', name: 'Biography'},
-                        {value: '+subject:computers', name: 'Computers'},
-                        {value: '+subject:history', name: 'History'},
-                        {value: '+subject:medical', name: 'Medical'},
-                        {value: '+subject:poetry', name: 'Poetry'},
-                    ]}
-                />
-                <SortSelect
-                    value={props.sort_by}
-                    onChange={sort=>props.setSortName(sort)}
-                    defaultValue="relevance"
-                    options={[
-                        {value: 'orderBy=newest', name: 'newest'},
-                    ]}
-                />
+                <div style={{display: "flex", justifyContent: "space-evenly", flexWrap: "wrap"}}>
+                    <FilterSelect
+                        value={props.categories}
+                        onChange={filter => props.setCategories(filter)}
+                        defaultValue="All"
+                        options={[
+                            {value: '+subject:art', name: 'Art'},
+                            {value: '+subject:biography', name: 'Biography'},
+                            {value: '+subject:computers', name: 'Computers'},
+                            {value: '+subject:history', name: 'History'},
+                            {value: '+subject:medical', name: 'Medical'},
+                            {value: '+subject:poetry', name: 'Poetry'},
+                        ]}
+                    />
+                    <SortSelect
+                        value={props.sort_by}
+                        onChange={sort=>props.setSortName(sort)}
+                        defaultValue="relevance"
+                        options={[
+                            {value: 'orderBy=newest', name: 'newest'},
+                        ]}
+                    />
+                </div>
+                
             </div>
         </div>
     );

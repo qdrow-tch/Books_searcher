@@ -1,13 +1,16 @@
 import React from "react";
 import classes from './InputSrch.module.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 async function GetBooksFromBase(props) {
     if (props.keywords != "") {
-        let params = `q=${props.keywords}${props.categories}&${props.sort_by}&fields=items(volumeInfo(title,authors,categories,imageLinks,description))`
+        let params = `q=${props.keywords.replace(" ", "+")}${props.categories}&${props.sort_by}&fields=items(volumeInfo(title,authors,categories,imageLinks,description),id)`
         fetch(`https://www.googleapis.com/books/v1/volumes?${params}`)
         .then((response) => response.json())
         .then((json) => props.setBooks(json.items.map(function(item){
             let template = {
+                id: "",
                 authors: [],
                 title: "",
                 description: "",
@@ -18,7 +21,7 @@ async function GetBooksFromBase(props) {
                 }
             }
             let result = {...template, ...item.volumeInfo}
-
+            result.id =  item.id
             return result
         })));
         //props.setBooks(json.items.map(items=>items.volumeInfo)))
@@ -28,12 +31,19 @@ async function GetBooksFromBase(props) {
 function SearchInput(props){
     return (
         <div className={classes.searchInput}>
-            <input 
+            <input
                     value={props.keywords}
-                    onChange={event=>props.setKeyWords(event.target.value)} 
-                    className={classes.searchinput}/><button 
+                    onChange={event=>props.setKeyWords(event.target.value)}
+                    onKeyUp={function(event){
+                        if (event.key === 'Enter'){
+                            GetBooksFromBase(props)
+                        }
+                    }} 
+                    className={classes.searchinput}/>
+            <button 
                     onClick={event=>{GetBooksFromBase(props)}}
-                    className={classes.searchbutton}>Send
+                    className={classes.searchbutton}>
+                    <FontAwesomeIcon icon={faSearch}/>
             </button>
         </div>   
     )

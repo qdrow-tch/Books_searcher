@@ -1,19 +1,24 @@
 .searchInput {
     display: flex;
+    padding: 0 10px;
 }
 
 .searchInput > *  {
-
     padding: 0;
     margin: 0;
     border: 0;
-
 }
 
 .searchInput > input {
     width: 100%;
+    padding-left: 10px;
 }
 
 .searchInput > button {
     background-color: white;
+    line-height: 26px;
+}
+
+.searchInput > button > svg {
+    margin: 0 10px;
 }

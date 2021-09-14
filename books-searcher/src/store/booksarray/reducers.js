@@ -6,7 +6,6 @@ const defaultState = {
 }
 
 export const changeBooksReducer = (state = defaultState, action) => {
-    console.log(state)
     switch(action.type){  
         case PUSH_BOOKS:
             return {...state, bookslist: [...state.bookslist, ...action.payload] };
