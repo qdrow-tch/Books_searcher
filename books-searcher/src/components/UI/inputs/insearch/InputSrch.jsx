@@ -18,13 +18,12 @@ async function GetBooksFromBase(props) {
                 imageLinks: {
                     smallThumbnail: "",
                     thumbnail: ""
-                }
+                },
             }
             let result = {...template, ...item.volumeInfo}
             result.id =  item.id
             return result
         })));
-        //props.setBooks(json.items.map(items=>items.volumeInfo)))
     }
 }
 

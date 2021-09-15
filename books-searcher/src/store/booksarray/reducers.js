@@ -3,6 +3,7 @@ import { SET_BOOKS, PUSH_BOOKS, CLEAR_BOOKS_ARRAY } from "./action";
 
 const defaultState = {
     bookslist: [],
+    domore:  false,
 }
 
 export const changeBooksReducer = (state = defaultState, action) => {
